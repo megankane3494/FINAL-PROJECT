@@ -309,6 +309,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .quality-work__description {
@@ -354,7 +355,7 @@ p {
 
 .steps__img--wrapper {
     width: 50%;
-    max-width: 500px;
+    /* max-width: 500px; */
 } 
 
 .steps__img {
@@ -363,7 +364,7 @@ p {
 
 .steps__description {
     width: 50%;
-    max-width: 500px;
+    /* max-width: 500px; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -403,7 +404,6 @@ p {
 
 .values__description {
     width: 50%;
-    max-width: 500px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -513,7 +513,7 @@ p {
 }
 
 .pricing__plan {
-    width: 100%;
+    width: calc(100% / 3);
     max-width: 24rem;
     display: flex;
     flex-direction: column;
@@ -528,12 +528,19 @@ p {
     margin-right: 2rem;
     padding-top: 0.5rem;
     margin-top: 4rem;
+    position: relative;
 }
 
-.pricing__plan:nth-child(2) {
-    background: linear-gradient(135deg, rgb(76, 81, 191) 0%, rgb(102, 126, 234) 100%);
-}
+.plan__stripe {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    height: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
 
+}
 
 .plan__box1 {
     display: flex;
@@ -591,21 +598,63 @@ p {
 }
 
 .plan__btn {
-    border-radius: 0.25rem;
-    background-color: rgb(100 21 255);
-    padding: 0.75rem 2rem;
+    padding: 1rem 5rem;
+    border: none;
+    border-radius: 2rem;
+    color: white;
     font-weight: 700;
-    color: rgb(247 250 252);
-    transition: all 300ms ease;
-    width: 100%;
-    border-radius: 9999px;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
 }
 
+    /* PRICE BOXES - TARGETING :NTH CHILD */
+
+.pricing__plan:nth-child(1) .plan__stripe {
+    background: linear-gradient(115deg, rgb(56, 178, 172) 0%, rgb(129, 230, 217) 100%);
+}
+
+.pricing__plan:nth-child(2) .plan__stripe {
+    background: linear-gradient(135deg, rgb(76, 81, 191) 0%, rgb(102, 126, 234) 100%);
+}
+
+.pricing__plan:nth-child(3) .plan__stripe {
+    background: linear-gradient(115deg, rgb(245, 101, 101) 0%, rgb(254, 178, 178) 100%);
+}
+
+.pricing__plan:nth-child(1) .plan__btn {
+    background: linear-gradient(115deg, rgb(56, 178, 172) 0%, rgb(129, 230, 217) 100%);
+    
+}
+
+.pricing__plan:nth-child(2) .plan__btn {
+    color: #6415ff;
+    background-color: #f7fafc;
+}
+
+.pricing__plan:nth-child(3) .plan__btn {
+    background: linear-gradient(115deg, rgb(245, 101, 101) 0%, rgb(254, 178, 178) 100%);
+}
+
+.pricing__plan:nth-child(2) {
+    background: linear-gradient(135deg, rgb(76, 81, 191) 0%, rgb(102, 126, 234) 100%);
+}
+
+.pricing__plan:nth-child(2) .plan__name,
+.pricing__plan:nth-child(2) .plan__price,
+.pricing__plan:nth-child(2) .plan__frequency,
+.pricing__plan:nth-child(2) .plan__customer,
+.pricing__plan:nth-child(2) .plan__package {
+    color: white;
+}
+
+.pricing__plan:nth-child(1) .plan__box2,
+.pricing__plan:nth-child(3) .plan__box2 {
+    border-top: 2px solid rgb(229, 231, 235);
+    border-bottom: 2px solid rgb(229, 231, 235);
+}
+
+.pricing__plan:nth-child(2) .plan__box2 {
+    border-top: 2px solid rgb(102, 126, 234);
+    border-bottom: 2px solid rgb(102, 126, 234);
+}
 
 
 
