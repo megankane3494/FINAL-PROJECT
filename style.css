@@ -90,6 +90,7 @@ p {
 }
 .container__nav {
   padding: 32px;
+  display: flex;
 }
 
 .nav__row {
@@ -97,6 +98,7 @@ p {
   justify-content: space-between;
   align-items: center;
   padding-bottom: 96px;
+  position: relative;
 }
 
 .nav__logo {
@@ -270,6 +272,92 @@ p {
 }
 
 /* BURGER MENU */
+
+.btn__menu {
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  font-size: 24px;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  padding: 8;
+  display: none;
+}
+
+.btn__menu--hover:hover {
+  filter: invert(26%) sepia(94%) saturate(7476%) hue-rotate(261deg) brightness(94%) contrast(115%);
+}
+
+.menu__backdrop {
+  position: fixed;
+  margin: 32px 32px;
+  padding: 32px;
+  background-color: #fff;
+  border: 1px solid rgb(229, 231, 235);
+  border-radius: 8px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 378px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 300ms ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.menu--open .menu__backdrop {
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu--open {
+  max-height: 100vh;
+  overflow-y: hidden;
+}
+
+.menu__links {
+  text-align: center;
+  width: 100%;
+    height: 100%;
+}
+
+.menu__list {
+  padding: 12px 0;
+}
+
+.menu__link {
+  color: #1a202c;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 8px 0;
+  padding-bottom: 4px;
+}
+
+.menu__link--btn {
+  color: #f7fafc;
+  padding: 12px 32px;
+  background: #6415ff;
+  border-radius: 500px;
+  border: none;
+}
+
+.menu__link--btn:hover {
+  background-color: rgb(80, 17, 204);
+}
+
+.btn__menu--close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  padding: 8;
+}
 
 /* FEATURES */
 
@@ -1054,6 +1142,10 @@ p {
 
   .nav__btn {
     display: none;
+  }
+
+  .btn__menu {
+    display: block;
   }
 
   .row__header {
